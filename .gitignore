@@ -25,3 +25,5 @@ dist-ssr
 coverage
 src/api/types.ts
 src/api/mock.ts
+playwright-report
+test-results

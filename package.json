@@ -1,7 +1,6 @@
 {
   "name": "vue3-plg",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -20,6 +19,7 @@
     "vue": "^3.5.12"
   },
   "devDependencies": {
+    "@playwright/test": "^1.48.2",
     "@types/node": "^22.9.0",
     "@vitejs/plugin-vue": "^5.1.4",
     "@vitest/coverage-v8": "2.1.5",

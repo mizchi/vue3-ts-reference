@@ -15,8 +15,8 @@ test("Component Test", async () => {
   });
 
   expect(wrapper.text()).toContain("Hello, John");
-  expect(wrapper.text()).toContain("Counter: 0");
+  expect(wrapper.text()).toContain("count:0");
 
   await wrapper.find("button").trigger("click");
-  expect(wrapper.text()).toContain("Counter: 1");
+  expect(wrapper.text()).toContain("count:1");
 });

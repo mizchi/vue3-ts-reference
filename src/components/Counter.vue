@@ -6,9 +6,10 @@ const counter = useCounterStore();
 
 <template>
   <p>Hello, {{ props.name }}!</p>
-  <button type="button" @click="counter.increment">
-    Counter: {{ counter.count }}
-  </button>
+  <button type="button" @click="counter.increment">increment</button>
+  <p>
+    <span data-testid="countValue">count:{{ counter.count }}</span>
+  </p>
 </template>
 
 <style scoped></style>

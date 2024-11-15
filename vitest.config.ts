@@ -1,9 +1,14 @@
-import { defineConfig, coverageConfigDefaults } from "vitest/config";
+import {
+  defineConfig,
+  coverageConfigDefaults,
+  defaultExclude,
+} from "vitest/config";
 import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
   plugins: [vue()],
   test: {
+    exclude: [...defaultExclude, "e2e/**"],
     coverage: {
       exclude: [
         ...coverageConfigDefaults.exclude,
