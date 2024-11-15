@@ -3,8 +3,7 @@ import Counter from "./Counter.vue";
 import { beforeEach, expect, test } from "vitest";
 import { shallowMount } from "@vue/test-utils";
 import { setActivePinia, createPinia } from "pinia";
-
-beforeEach(() => {
+beforeEach(async () => {
   setActivePinia(createPinia());
 });
 
@@ -14,6 +13,7 @@ test("Component Test", async () => {
       name: "John",
     },
   });
+
   expect(wrapper.text()).toContain("Hello, John");
   expect(wrapper.text()).toContain("Counter: 0");
 

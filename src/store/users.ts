@@ -1,7 +1,8 @@
+// Network store examples
 import { ref, Ref } from "vue";
 import { defineStore } from "pinia";
-import { client } from "../api/api";
-import type { User } from "../api/api";
+import { createClient } from "../api/client";
+import type { User } from "../api/impl";
 
 type UsersStore = {
   loaded: Ref<boolean>;
@@ -13,12 +14,13 @@ export const useUsersStore = defineStore<"users", UsersStore>("users", () => {
   const loaded = ref(false);
   const users = ref<User[] | null>(null);
   const load = async () => {
+    const client = createClient();
     loaded.value = false;
-    const { data } = await client.GET("/users", {});
-    loaded.value = true;
-    if (data) {
-      users.value = data;
+    const result = await client.GET("/users", {});
+    if (result.data) {
+      users.value = result.data;
     }
+    loaded.value = true;
   };
   return { loaded, users, load };
 });
